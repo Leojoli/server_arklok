@@ -391,6 +391,7 @@ async function atualizaServico() {
     // data.setDate(data.getDay() - 14);
     // const diaAtual = `${da}-${mo}-${ye}`;
     // const diaAnterior = data.toLocaleString().replace(/\//gi, "-").split(" ")[0];
+
     var data = new Date();
     data.setDate(data.getDate());
     let diaSplit = data.toLocaleString().slice(0, 10).split("/")
