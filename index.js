@@ -35,7 +35,7 @@ async function criaServico() {
     let diaAtual = diaSplit[0] + "/" + diaSplit[1] + "/" + diaSplit[2]
     data.setDate(data.getDate() - 14);
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
-    let diaAnterior = diaAnteriorSplit[0] + "/" + diaAnteriorSplit[1] + "/" + diaAnteriorSplit[2]
+    let diaAnterior = diaAnteriorSplit[1] + "/" + diaAnteriorSplit[0] + "/" + diaAnteriorSplit[2]
     console.log(diaAnterior, diaAtual)
 
     const obterDados = require('./obterDadosCriar')
@@ -398,7 +398,7 @@ async function atualizaServico() {
     let diaAtual = diaSplit[0] + "/" + diaSplit[1] + "/" + diaSplit[2]
     data.setDate(data.getDate() - 14);
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
-    let diaAnterior = diaAnteriorSplit[0] + "/" + diaAnteriorSplit[1] + "/" + diaAnteriorSplit[2]
+    let diaAnterior = diaAnteriorSplit[1] + "/" + diaAnteriorSplit[0] + "/" + diaAnteriorSplit[2]
     console.log(diaAnterior, diaAtual)
         //obtendo dados
     const obterDados = require('./obterDadosServico')
