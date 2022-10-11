@@ -15,20 +15,6 @@ app.use(
 
 // Inicio função criar serviço
 async function criaServico() {
-    // Coletar periodo da requisição
-    //periodo servidor
-    // var data = new Date();
-    // data.setDate(data.getDate());
-    // let diaSplit = data.toLocaleString().slice(0, 10).split("/")
-    // let diaAtual = diaSplit[1] + "/" + diaSplit[0] + "/" + diaSplit[2]
-    // data.setDate(data.getDate() - 14);
-    // let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
-    // let diaAnterior = diaAnteriorSplit[1] + "/" + diaAnteriorSplit[0] + "/" + diaAnteriorSplit[2]
-    // console.log(diaAnterior.replace(",", ""), diaAtual.replace(", ", ""));
-    // Abrir chamado que estão na fila FILA_CHAMADOS ROTEIRIZADOS
-    // Macro Chamado por período
-    //obtendo dados
-
     var data = new Date();
     data.setDate(data.getDate());
     let diaSplit = data.toLocaleString().slice(0, 10).split("/")
@@ -376,22 +362,6 @@ criaServico()
 
 //         // Inicio das atualizações do serviço
 async function atualizaServico() {
-    // Coletar periodo da requisição
-    // let d = new Date();
-    // let ye = new Intl.DateTimeFormat("en", {
-    //     year: "numeric",
-    // }).format(d);
-    // let mo = new Intl.DateTimeFormat("en", {
-    //     month: "2-digit",
-    // }).format(d);
-    // let da = new Intl.DateTimeFormat("en", {
-    //     day: "2-digit",
-    // }).format(d);
-    // var data = new Date();
-    // data.setDate(data.getDay() - 14);
-    // const diaAtual = `${da}-${mo}-${ye}`;
-    // const diaAnterior = data.toLocaleString().replace(/\//gi, "-").split(" ")[0];
-
     var data = new Date();
     data.setDate(data.getDate());
     let diaSplit = data.toLocaleString().slice(0, 10).split("/")
