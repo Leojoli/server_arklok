@@ -399,9 +399,8 @@ async function atualizaServico() {
     data.setDate(data.getDate() - 14);
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
     let diaAnterior = diaAnteriorSplit[0] + "/" + diaAnteriorSplit[1] + "/" + diaAnteriorSplit[2]
-    console.log(diaAnterior.replace(",", ""), diaAtual.replace(", ", ""));
-
-    //obtendo dados
+    console.log(diaAnterior, diaAtual)
+        //obtendo dados
     const obterDados = require('./obterDadosServico')
     const transResp = await obterDados({ diaAnterior, diaAtual })
 
