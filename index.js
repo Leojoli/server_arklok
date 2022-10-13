@@ -17,11 +17,9 @@ app.use(
 async function criaServico() {
     var data = new Date();
     data.setDate(data.getDate());
-    let diaSplit = data.toLocaleString().slice(0, 10).split("/")
-    let diaAtual = diaSplit[1] + "/" + diaSplit[0] + "/" + diaSplit[2]
+    let diaAtual = data.toLocaleString().slice(0, 10)
     data.setDate(data.getDate() - 14);
-    let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
-    let diaAnterior = diaAnteriorSplit[1] + "/" + (diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]) + "/" + diaAnteriorSplit[2]
+    let diaAnterior = data.toLocaleString().slice(0, 10)
     console.log(diaAnterior, diaAtual)
 
     const obterDados = require('./obterDadosCriar')
@@ -364,11 +362,9 @@ criaServico()
 async function atualizaServico() {
     var data = new Date();
     data.setDate(data.getDate());
-    let diaSplit = data.toLocaleString().slice(0, 10).split("/")
-    let diaAtual = diaSplit[1] + "/" + diaSplit[0] + "/" + diaSplit[2]
+    let diaAtual = data.toLocaleString().slice(0, 10)
     data.setDate(data.getDate() - 14);
-    let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
-    let diaAnterior = diaAnteriorSplit[1] + "/" + (diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]) + "/" + diaAnteriorSplit[2]
+    let diaAnterior = data.toLocaleString().slice(0, 10)
     console.log(diaAnterior, diaAtual)
         //obtendo dados
     const obterDados = require('./obterDadosServico')
