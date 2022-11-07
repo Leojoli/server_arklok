@@ -9,12 +9,8 @@ const servicesDespachados = () => {
         // Hora atual
         var time = new Date()
         var hora = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
-
-
         let horaDespachado = "10:00 PM"
-
         console.log(hora);
-
         if (horaDespachado === hora) {
             (function() {
                 // Coletar periodo da requisição
