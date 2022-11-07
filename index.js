@@ -1552,7 +1552,7 @@ async function atualizaServico() {
                         let inserirAcaoDescricaoData = JSON.stringify({
                             "TipoAcao": "Atendimento",
                             "LoginAnalistaDe": "TECNICA_ROTEIRIZADA",
-                            "LoginAnalistaPara": `${nomeAgente[0]}.${nomeAgente[1]}`,
+                            "LoginAnalistaPara": `${nomeAgente[0]}.${nomeAgente[nomeAgente.length -1]}`,
                             "Estado": "CONCLUIDO",
                             "CodigoChamado": numero,
                             "Descricao": `
@@ -1617,7 +1617,7 @@ async function atualizaServico() {
                                     let inserirAcaoDescricaoData = JSON.stringify({
                                         "TipoAcao": "Atendimento",
                                         "LoginAnalistaDe": "TECNICA_ROTEIRIZADA",
-                                        "LoginAnalistaPara": `${nomeAgente[0]}.${nomeAgente[1]}`,
+                                        "LoginAnalistaPara": `${nomeAgente[0]}.${nomeAgente[nomeAgente.length -1]}`,
                                         "Estado": "CONLUÍDO – PAI",
                                         "CodigoChamado": numero,
                                         "Descricao": `
