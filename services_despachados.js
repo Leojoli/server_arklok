@@ -7,9 +7,15 @@ var port = process.env.PORT || 30004;
 const servicesDespachados = () => {
     setInterval(() => {
         // Hora atual
-        var time = new Date()
-        var hora = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
-        let horaDespachado = "10:00 PM"
+        // Hora atual
+        const data = new Date();
+        let hourFormated = new Intl.DateTimeFormat(
+            'pt-BR', {
+                timeZone: 'America/Sao_Paulo',
+                dateStyle: 'short',
+                timeStyle: 'short'
+            }).format(data)
+        let hora = hourFormated.slice(hourFormated.length - 5)
         console.log(hora);
         if (horaDespachado === hora) {
             (function() {
