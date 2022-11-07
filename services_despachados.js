@@ -17,6 +17,7 @@ const servicesDespachados = () => {
             }).format(data)
         let hora = hourFormated.slice(hourFormated.length - 5)
         console.log(hora);
+        let horaDespachado = "10:00"
         if (horaDespachado === hora) {
             (function() {
                 // Coletar periodo da requisição
