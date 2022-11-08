@@ -81,7 +81,7 @@ async function criaServico() {
                     let inserirAcaoDescricaoData = JSON.stringify({
                         TipoAcao: "Atendimento",
                         LoginAnalistaDe: "FILA_ROTEIRIZACAO",
-                        LoginAnalistaPara: "TECNICA",
+                        LoginAnalistaPara: "fila_n1",
                         Estado: "Aguardando Atendimento",
                         CodigoChamado: numeroOS,
                         Descricao: `Não encontrado o endereço do cliente ${nomeDoFavorecido}, 
