@@ -479,7 +479,7 @@ async function atualizaServico() {
                 let teste = ultimoStatusGoon.includes("FIOK1") === true ? "A" : "B"
                 console.log(teste);
 
-                if (ultimoStatusGoon.includes("COPE") == true && estado.includes("CANCELAR ATENDIMENTO") == false && estado.includes("NÃO ATENDIDO") == false) {
+                if (ultimoStatusGoon.includes("COPE") === true && estado.includes("CANCELAR ATENDIMENTO") === false && estado.includes("NÃO ATENDIDO") == false) {
                     console.log('CANCELADO');
 
                     let indiceNameGoon = resStatusArrayGoon[0].indexOf("COPE")
@@ -546,7 +546,7 @@ async function atualizaServico() {
                         }
                     }
 
-                } else if (ultimoStatusGoon.includes("CTEC") == true && estado.includes("CANCELAR ATENDIMENTO") == false && estado.includes("NÃO ATENDIDO") == false) {
+                } else if (ultimoStatusGoon.includes("CTEC") === true && estado.includes("CANCELAR ATENDIMENTO") === false && estado.includes("NÃO ATENDIDO") == false) {
                     console.log('CANCELADO');
 
                     let indiceNameGoon = resStatusArrayGoon[0].indexOf("CTEC")
@@ -614,7 +614,7 @@ async function atualizaServico() {
                         }
                     }
 
-                } else if (ultimoStatusGoon.includes("CCLI") == true && estado.includes("CANCELAR ATENDIMENTO") == false && estado.includes("NÃO ATENDIDO") == false) {
+                } else if (ultimoStatusGoon.includes("CCLI") === true && estado.includes("CANCELAR ATENDIMENTO") === false && estado.includes("NÃO ATENDIDO") == false) {
                     console.log('CANCELADO');
 
                     let indiceNameGoon = resStatusArrayGoon[0].indexOf("CCLI")
@@ -681,7 +681,7 @@ async function atualizaServico() {
                         }
                     }
 
-                } else if (ultimoStatusGoon.includes("AGEN") == true && estado.includes("AGUARDANDO ATENDIMENTO") == false) {
+                } else if (ultimoStatusGoon.includes("AGEN") === true && estado.includes("AGUARDANDO ATENDIMENTO") === false) {
                     console.log('AGUARDANDO ATENDIMENTO01');
 
                     let indiceNameGoon = resStatusArrayGoon.indexOf("AGEN")
@@ -741,7 +741,7 @@ async function atualizaServico() {
                         }
                     }
 
-                } else if (ultimoStatusGoon.includes("ACTE") == true && estado.includes("ACIONADO TECNICO PARCEIRO") == false) {
+                } else if (ultimoStatusGoon.includes("ACTE") === true && estado.includes("ACIONADO TECNICO PARCEIRO") === false) {
                     console.log('ACIONADO TECNICO PARCEIRO02');
 
                     let indiceNameGoon = resStatusArrayGoon[0].indexOf("ACTE")
@@ -804,7 +804,7 @@ async function atualizaServico() {
                         }
                     }
 
-                } else if (ultimoStatusGoon.includes("TACM") == true && estado.includes("EM DESLOCAMENTO") == false) {
+                } else if (ultimoStatusGoon.includes("TACM") === true && estado.includes("EM DESLOCAMENTO") === false) {
                     console.log('EM DESLOCAMENTO03');
 
                     let indiceNameGoon = resStatusArrayGoon[0].indexOf("TACM")
@@ -865,7 +865,7 @@ async function atualizaServico() {
                         }
                     }
 
-                } else if (ultimoStatusGoon.includes("NOLO") == true && estado.includes("NO LOCAL DO CLIENTE") == false) {
+                } else if (ultimoStatusGoon.includes("NOLO") === true && estado.includes("NO LOCAL DO CLIENTE") === false) {
                     console.log('NO LOCAL DO CLIENTE04');
 
                     let indiceNameGoon = resStatusArrayGoon[0].indexOf("NOLO")
@@ -925,7 +925,7 @@ async function atualizaServico() {
                             console.log(this.responseText)
                         }
                     }
-                } else if (ultimoStatusGoon.includes("INIC") == true && estado.includes("EM ATENDIMENTO") == false) {
+                } else if (ultimoStatusGoon.includes("INIC") === true && estado.includes("EM ATENDIMENTO") === false) {
                     console.log('EM ATENDIMENTO');
 
                     let indiceNameGoon = resStatusArrayGoon[0].indexOf("INIC")
@@ -983,7 +983,7 @@ async function atualizaServico() {
                             console.log(this.responseText)
                         }
                     }
-                } else if (ultimoStatusGoon.includes("FIOK1") == true && estado.includes("IMPRODUTIVO") == false) {
+                } else if (ultimoStatusGoon.includes("FIOK1") === true && estado.includes("IMPRODUTIVO") === false) {
 
                     let indiceNameGoon = resStatusArrayGoon[0].indexOf("FIOK1")
                     let re = [" "];
@@ -1086,7 +1086,7 @@ async function atualizaServico() {
 
 
                     }
-                } else if (ultimoStatusGoon.includes("FIOK2") == true && estado.includes("NÃO ATENDIDO") == false) {
+                } else if (ultimoStatusGoon.includes("FIOK2") === true && estado.includes("NÃO ATENDIDO") === false) {
 
                     let indiceNameGoon = resStatusArrayGoon[0].indexOf("FIOK2")
                     let re = [" "];
@@ -1188,7 +1188,7 @@ async function atualizaServico() {
                             }
                         }
                     }
-                } else if (ultimoStatusGoon.includes("FIOK3") == true && estado.includes("PENDENTE RETORNO DE EQUIPAMENTO") == false) {
+                } else if (ultimoStatusGoon.includes("FIOK3") === true && estado.includes("PENDENTE RETORNO DE EQUIPAMENTO") === false) {
 
                     let indiceNameGoon = resStatusArrayGoon[0].indexOf("FIOK3")
                     let re = [" "];
@@ -1291,7 +1291,7 @@ async function atualizaServico() {
 
 
                     }
-                } else if (ultimoStatusGoon.includes("FIOK4") == true && estado.includes("PENDENTE DE PECA") == false) {
+                } else if (ultimoStatusGoon.includes("FIOK4") === true && estado.includes("PENDENTE DE PECA") === false) {
 
                     let indiceNameGoon = resStatusArrayGoon[0].indexOf("FIOK4")
                     let re = [" "];
@@ -1392,7 +1392,7 @@ async function atualizaServico() {
                             }
                         }
                     }
-                } else if (ultimoStatusGoon.includes("FIOK5") == true && estado.includes("PENDENTE SOFTWARE") == false) {
+                } else if (ultimoStatusGoon.includes("FIOK5") === true && estado.includes("PENDENTE SOFTWARE") === false) {
 
                     let indiceNameGoon = resStatusArrayGoon[0].indexOf("FIOK5")
                     let re = [" "];
@@ -1493,7 +1493,7 @@ async function atualizaServico() {
                             }
                         }
                     }
-                } else if (ultimoStatusGoon.includes("FIOK") == true && estado.includes("CONCLUIDO") == false) {
+                } else if (ultimoStatusGoon.includes("FIOK") === true && estado.includes("CONCLUIDO") === false) {
 
                     console.log("e este" + resStatusArrayGoon);
                     let indiceNameGoon = resStatusArrayGoon[0].indexOf("FIOK")
@@ -1663,7 +1663,6 @@ async function atualizaServico() {
                             }
                         }
                     }
-
                 }
             }
         }
