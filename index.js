@@ -1240,7 +1240,7 @@ async function atualizaServico() {
 
                         let inserirAcaoDescricaoData = JSON.stringify({
                             "TipoAcao": "Atendimento",
-                            "LoginAnalistaDe": "TECNICA_ROTEIRIZADA",
+                            "LoginAnalistaDe": "FILA_PENDENTE",
                             "LoginAnalistaPara": `${indeceNameGOONArray[0]}.${indeceNameGOONArray.pop()}`,
                             "Estado": "PENDENTE RETORNO DE EQUIPAMENTO",
                             "CodigoChamado": numero,
@@ -1343,7 +1343,7 @@ async function atualizaServico() {
 
                         let inserirAcaoDescricaoData = JSON.stringify({
                             "TipoAcao": "Atendimento",
-                            "LoginAnalistaDe": "TECNICA_ROTEIRIZADA",
+                            "LoginAnalistaDe": "FILA_PENDENTE",
                             "LoginAnalistaPara": `${indeceNameGOONArray[0]}.${indeceNameGOONArray.pop()}`,
                             "Estado": "PENDENTE DE PECA",
                             "CodigoChamado": numero,
@@ -1444,7 +1444,7 @@ async function atualizaServico() {
 
                         let inserirAcaoDescricaoData = JSON.stringify({
                             "TipoAcao": "Atendimento",
-                            "LoginAnalistaDe": "TECNICA_ROTEIRIZADA",
+                            "LoginAnalistaDe": "FILA_PENDENTE",
                             "LoginAnalistaPara": `${indeceNameGOONArray[0]}.${indeceNameGOONArray.pop()}`,
                             "Estado": "PENDENTE SOFTWARE",
                             "CodigoChamado": numero,
