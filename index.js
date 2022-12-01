@@ -19,7 +19,7 @@ async function criaServico() {
     data.setDate(data.getDate());
     let diaSplit = data.toLocaleString().slice(0, 10).split("/")
     let diaAtual = diaSplit[1] + "/" + diaSplit[0] + "/" + diaSplit[2]
-    data.setDate(data.getDate() - 14);
+    data.setDate(data.getDate() - 59);
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
     let diaAnterior = diaAnteriorSplit[1] + "/" + (diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]) + "/" + diaAnteriorSplit[2]
     console.log(diaAnterior, diaAtual)
@@ -366,7 +366,7 @@ async function atualizaServico() {
     data.setDate(data.getDate());
     let diaSplit = data.toLocaleString().slice(0, 10).split("/")
     let diaAtual = diaSplit[1] + "/" + diaSplit[0] + "/" + diaSplit[2]
-    data.setDate(data.getDate() - 14);
+    data.setDate(data.getDate() - 59);
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
     let diaAnterior = diaAnteriorSplit[1] + "/" + (diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]) + "/" + diaAnteriorSplit[2]
     console.log(diaAnterior, diaAtual)
@@ -1675,7 +1675,7 @@ const services = () => {
     setInterval(() => {
         atualizaServico()
         criaServico()
-    }, 180000);
+    }, 900000);
 }
 
 app.listen(port, console.log(`Conectado, localhost:${port}`), services);
