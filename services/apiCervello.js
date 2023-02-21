@@ -5,7 +5,7 @@ const apicervello = axios.create({
     baseURL: 'https://www.cervelloesm.com.br/Arklok/Api/',
     auth: {
         username: 'integracao',
-        password: 'integracao01'
+        password: 'i4a0I8sCmUJzgMrxEyAwxUL7NaMKnrp3lWeWmW1oKY4='
     }
 });
 module.exports = apicervello;
