@@ -22,7 +22,7 @@ async function criaServico() {
     data.setDate(data.getDate() - 59);
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
     let diaAnterior = diaAnteriorSplit[2] + "-" + (diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]) + "-" + diaAnteriorSplit[1]
-    console.log(diaAnterior, diaAtual)
+    console.log("primeiro", diaAnterior, diaAtual)
 
     const obterDados = require('./obterDadosCriar')
     const transResp = await obterDados({ diaAnterior, diaAtual, fila: "FILA_CHAMADOS ROTEIRIZADOS" })
@@ -365,11 +365,11 @@ async function atualizaServico() {
     var data = new Date();
     data.setDate(data.getDate());
     let diaSplit = data.toLocaleString().slice(0, 10).split("/")
-    let diaAtual = diaSplit[1] + "/" + diaSplit[0] + "/" + diaSplit[2]
+    let diaAtual = diaSplit[2] + "-" + diaSplit[0] + "-" + diaSplit[1]
     data.setDate(data.getDate() - 59);
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
-    let diaAnterior = diaAnteriorSplit[1] + "/" + (diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]) + "/" + diaAnteriorSplit[2]
-    console.log(diaAnterior, diaAtual)
+    let diaAnterior = diaAnteriorSplit[2] + "-" + (diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]) + "-" + diaAnteriorSplit[1]
+    console.log("segundo", diaAnterior, diaAtual)
         //obtendo dados
     const obterDados = require('./obterDadosServico')
     const transResp = await obterDados({ diaAnterior, diaAtual })
