@@ -18,12 +18,12 @@ async function criaServico() {
     var data = new Date();
     data.setDate(data.getDate());
     let diaSplit = data.toLocaleString().slice(0, 10).split("/")
-    let diaAtual = diaSplit[2].replace(/, /,'') + "-" +(diaSplit[0] < 10 ? "0" + diaSplit[0] : diaSplit[0]) + "-" + (diaSplit[1] < 10 ? "0" + diaSplit[1] : diaSplit[1])
+    let diaAtual = diaSplit[2].replace(/, /,'') + "-" +(diaSplit[1] < 10 ? "0" + diaSplit[1] : diaSplit[1]) + "-" + (diaSplit[0] < 10 ? "0" + diaSplit[0] : diaSplit[0])
     console.log(diaAtual)
     data.setDate(data.getDate() - 59);
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
     console.log(diaAnteriorSplit)
-       let diaAnterior = diaAnteriorSplit[2].replace(/, /,'') + "-" +(diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1]) + "-" + (diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0])
+       let diaAnterior = diaAnteriorSplit[2].replace(/, /,'') + "-" +(diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]) + "-" + (diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1])
     console.log("Anterior", diaAnterior, " Atual ",diaAtual)
 
     const obterDados = require('./obterDadosCriar')
