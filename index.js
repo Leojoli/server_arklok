@@ -21,8 +21,9 @@ async function criaServico() {
     let diaAtual = diaSplit[2] + "-" + diaSplit[0] + "-" + diaSplit[1]
     data.setDate(data.getDate() - 59);
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
-    let mes1 = diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1]
-    let diaAnterior = diaAnteriorSplit[2].replace(/,/,'') + "-" + mes1 + "-" + diaAnteriorSplit[0]
+    console.log(diaAnteriorSplit)
+    let mes1 = diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]
+    let diaAnterior = diaAnteriorSplit[2].replace(/ ,/,'') + "-" + mes1 + "-" + diaAnteriorSplit[1]
     console.log("primeiro", diaAnterior, diaAtual)
 
     const obterDados = require('./obterDadosCriar')
@@ -368,9 +369,10 @@ async function atualizaServico() {
     let diaSplit = data.toLocaleString().slice(0, 10).split("/")
     let diaAtual = diaSplit[2] + "-" + diaSplit[0] + "-" + diaSplit[1]
     data.setDate(data.getDate() - 59);
-   let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
-    let mes1 = diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1]
-    let diaAnterior = diaAnteriorSplit[2].replace(/,/,'') + "-" + mes1 + "-" + diaAnteriorSplit[0]
+  let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
+    console.log(diaAnteriorSplit)
+    let mes1 = diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]
+    let diaAnterior = diaAnteriorSplit[2].replace(/ ,/,'') + "-" + mes1 + "-" + diaAnteriorSplit[1]
     console.log("primeiro", diaAnterior, diaAtual)
         //obtendo dados
     const obterDados = require('./obterDadosServico')
