@@ -24,7 +24,7 @@ async function criaServico() {
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
     console.log(diaAnteriorSplit)
        let diaAnterior = diaAnteriorSplit[2].replace(/, /,'') + "-" +(diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1]) + "-" + (diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0])
-    console.log("primeiro", diaAnterior, " anterior ",diaAtual)
+    console.log("Anterior", diaAnterior, " Atual ",diaAtual)
 
     const obterDados = require('./obterDadosCriar')
     const transResp = await obterDados({ diaAnterior, diaAtual, fila: "FILA_CHAMADOS ROTEIRIZADOS" })
