@@ -22,12 +22,12 @@ async function criaServico() {
     data.setDate(data.getDate() - 59);
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
     console.log(diaAnteriorSplit)
-    let mes1 = diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]
-    let diaAnterior = diaAnteriorSplit[2].replace(/ ,/,'') + "-" + mes1 + "-" + diaAnteriorSplit[1]
-    console.log("primeiro", diaAnterior, diaAtual)
+    let mes1 = diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1]
+    let diaAnterior = diaAnteriorSplit[2].replace(/, /,'') + "-" + mes1 + "-" + diaAnteriorSplit[0]
+    console.log("primeiro", diaAnterior, " anterior ",diaAtual.replace(/, /,''))
 
     const obterDados = require('./obterDadosCriar')
-    const transResp = await obterDados({ diaAnterior, diaAtual, fila: "FILA_CHAMADOS ROTEIRIZADOS" })
+    const transResp = await obterDados({ diaAnterior, diaAtual.replace(/, /,''), fila: "FILA_CHAMADOS ROTEIRIZADOS" })
     console.log(transResp);
     //alterado data
 
@@ -364,19 +364,19 @@ criaServico()
 
 //         // Inicio das atualizações do serviço
 async function atualizaServico() {
-    var data = new Date();
+   var data = new Date();
     data.setDate(data.getDate());
     let diaSplit = data.toLocaleString().slice(0, 10).split("/")
     let diaAtual = diaSplit[2] + "-" + diaSplit[0] + "-" + diaSplit[1]
     data.setDate(data.getDate() - 59);
-  let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
+    let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
     console.log(diaAnteriorSplit)
-    let mes1 = diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]
-    let diaAnterior = diaAnteriorSplit[2].replace(/ ,/,'') + "-" + mes1 + "-" + diaAnteriorSplit[1]
-    console.log("primeiro", diaAnterior, diaAtual)
-        //obtendo dados
+    let mes1 = diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1]
+    let diaAnterior = diaAnteriorSplit[2].replace(/, /,'') + "-" + mes1 + "-" + diaAnteriorSplit[0]
+    console.log("primeiro", diaAnterior, " anterior ",diaAtual.replace(/, /,''))
+
     const obterDados = require('./obterDadosServico')
-    const transResp = await obterDados({ diaAnterior, diaAtual })
+    const transResp = await obterDados({ diaAnterior, diaAtual.replace(/, /,'')l })
 
 
     let arrayChamado = []
