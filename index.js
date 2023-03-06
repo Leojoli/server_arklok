@@ -24,10 +24,10 @@ async function criaServico() {
     console.log(diaAnteriorSplit)
     let mes1 = diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1]
     let diaAnterior = diaAnteriorSplit[2].replace(/, /,'') + "-" + mes1 + "-" + diaAnteriorSplit[0]
-    console.log("primeiro", diaAnterior, " anterior ",diaAtual.replace(/, /,''))
+    console.log("primeiro", diaAnterior, " anterior ",diaAtual)
 
     const obterDados = require('./obterDadosCriar')
-    const transResp = await obterDados({ diaAnterior, diaAtual.replace(/, /,''), fila: "FILA_CHAMADOS ROTEIRIZADOS" })
+    const transResp = await obterDados({ diaAnterior, diaAtual, fila: "FILA_CHAMADOS ROTEIRIZADOS" })
     console.log(transResp);
     //alterado data
 
@@ -373,10 +373,10 @@ async function atualizaServico() {
     console.log(diaAnteriorSplit)
     let mes1 = diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1]
     let diaAnterior = diaAnteriorSplit[2].replace(/, /,'') + "-" + mes1 + "-" + diaAnteriorSplit[0]
-    console.log("primeiro", diaAnterior, " anterior ",diaAtual.replace(/, /,''))
+    console.log("primeiro", diaAnterior, " anterior ",diaAtual)
 
     const obterDados = require('./obterDadosServico')
-    const transResp = await obterDados({ diaAnterior, diaAtual.replace(/, /,'')l })
+    const transResp = await obterDados({ diaAnterior, diaAtual})
 
 
     let arrayChamado = []
