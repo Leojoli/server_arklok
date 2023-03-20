@@ -1681,7 +1681,7 @@ const services = () => {
     setInterval(() => {
         atualizaServico()
         criaServico()
-    }, 900000);
+    }, 60000);
 }
 
 app.listen(port, console.log(`Conectado, localhost:${port}`), services);
