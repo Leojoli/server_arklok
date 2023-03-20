@@ -1656,14 +1656,12 @@ async function atualizaServico() {
 }
 
 atualizaServico()
+
     // Final das atualizações do serviço
 const services = () => {
     setInterval(() => {
         atualizaServico()
-    }, 60000);
-    setInterval(() => {       
         criaServico()
-    }, 180000);
+    }, 80000);
 }
-
 app.listen(port, console.log(`Conectado, localhost:${port}`), services);
