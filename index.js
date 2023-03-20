@@ -16,6 +16,7 @@ app.use(
 // Inicio função criar serviço
 async function criaServico() {
     var data = new Date();
+    var data = new Date();
     data.setDate(data.getDate());
     let diaSplit = data.toLocaleString().slice(0, 10).split("/")
     let diaAtual = diaSplit[2].replace(/,/, '') + "-" + (diaSplit[0] < 10 ? "0" + diaSplit[0] : diaSplit[0]) + "-" + (diaSplit[1] < 10 ? "0" + diaSplit[1] : diaSplit[1])
@@ -53,7 +54,7 @@ async function criaServico() {
         });
         console.log("endereco" + dataEndereco);
         // Requisição endereço
-        let URLEndereco = `https://www.cervelloesm.com.br/Arklok/Api/FuncaoMacro/ExecutaMacroFuncao`;
+        let URLEndereco = `https://www.cervelloesm.com.br/Arklok/Api/FuncaoMacro/ExecutaMacroFuncao?Authorization=Basic Y2VydmVsbG86IGNlcnZlbGxvMDE=`;
         let xhrEndereco = new XMLHttpRequest();
         xhrEndereco.onreadystatechange = function() {
             if (xhrEndereco.readyState == 4 && xhrEndereco.status == 200) {
@@ -110,6 +111,10 @@ async function criaServico() {
                     });
                     // Envio do XML
                     inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
+                    inserirAcaoDescricao.setRequestHeader(
+                        "Authorization",
+                        "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ=="
+                    );
                     inserirAcaoDescricao.setRequestHeader(
                         "Content-Type",
                         "application/json"
@@ -335,6 +340,7 @@ async function criaServico() {
                     });
                     // Envio do XML
                     inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
+                    inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                     inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -1661,8 +1667,9 @@ const services = () => {
         atualizaServico()
     }, 60000);
     setInterval(() => {       
-        criaServico()
-    }, 180000);
+        
+        
+    }, 100000);
 }
 
 app.listen(port, console.log(`Conectado, localhost:${port}`), services);
