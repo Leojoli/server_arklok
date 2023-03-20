@@ -16,16 +16,16 @@ app.use(
 // Inicio função criar serviço
 async function criaServico() {
     var data = new Date();
-     var data = new Date();
+    var data = new Date();
     data.setDate(data.getDate());
     let diaSplit = data.toLocaleString().slice(0, 10).split("/")
-    let diaAtual = diaSplit[2].replace(/,/,'') + "-" +(diaSplit[0] < 10 ? "0" + diaSplit[0] : diaSplit[0]) + "-" + (diaSplit[1] < 10 ? "0" + diaSplit[1] : diaSplit[1])
+    let diaAtual = diaSplit[2].replace(/,/, '') + "-" + (diaSplit[0] < 10 ? "0" + diaSplit[0] : diaSplit[0]) + "-" + (diaSplit[1] < 10 ? "0" + diaSplit[1] : diaSplit[1])
     console.log(diaAtual)
     data.setDate(data.getDate() - 59);
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
     console.log(diaAnteriorSplit)
-    let diaAnterior = diaAnteriorSplit[2].replace(/,/,'') + "-" +(diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]) + "-" + (diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1])
-    console.log("Anterior", diaAnterior, " Atual ",diaAtual)
+    let diaAnterior = diaAnteriorSplit[2].replace(/,/, '') + "-" + (diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]) + "-" + (diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1])
+    console.log("Anterior", diaAnterior, " Atual ", diaAtual)
 
 
     const obterDados = require('./obterDadosCriar')
@@ -54,7 +54,7 @@ async function criaServico() {
         });
         console.log("endereco" + dataEndereco);
         // Requisição endereço
-        let URLEndereco = `https://www.cervelloesm.com.br/Arklok/Api/FuncaoMacro/ExecutaMacroFuncao?Authorization=Basic Y2VydmVsbG86IGNlcnZlbGxvMDE=`;
+        let URLEndereco = `https://www.cervelloesm.com.br/Arklok/Api/FuncaoMacro/ExecutaMacroFuncao`;
         let xhrEndereco = new XMLHttpRequest();
         xhrEndereco.onreadystatechange = function() {
             if (xhrEndereco.readyState == 4 && xhrEndereco.status == 200) {
@@ -111,10 +111,6 @@ async function criaServico() {
                     });
                     // Envio do XML
                     inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                    inserirAcaoDescricao.setRequestHeader(
-                        "Authorization",
-                        "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ=="
-                    );
                     inserirAcaoDescricao.setRequestHeader(
                         "Content-Type",
                         "application/json"
@@ -340,7 +336,6 @@ async function criaServico() {
                     });
                     // Envio do XML
                     inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                    inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                     inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -369,16 +364,16 @@ async function atualizaServico() {
     var data = new Date();
     data.setDate(data.getDate());
     let diaSplit = data.toLocaleString().slice(0, 10).split("/")
-    let diaAtual = diaSplit[2].replace(/, /,'') + "-" +(diaSplit[1] < 10 ? "0" + diaSplit[1] : diaSplit[1]) + "-" + (diaSplit[0] < 10 ? "0" + diaSplit[0] : diaSplit[0])
+    let diaAtual = diaSplit[2].replace(/, /, '') + "-" + (diaSplit[1] < 10 ? "0" + diaSplit[1] : diaSplit[1]) + "-" + (diaSplit[0] < 10 ? "0" + diaSplit[0] : diaSplit[0])
     console.log(diaAtual)
     data.setDate(data.getDate() - 59);
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
     console.log(diaAnteriorSplit)
-       let diaAnterior = diaAnteriorSplit[2].replace(/, /,'') + "-" +(diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]) + "-" + (diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1])
-    console.log("Anterior", diaAnterior, " Atual ",diaAtual)
+    let diaAnterior = diaAnteriorSplit[2].replace(/, /, '') + "-" + (diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]) + "-" + (diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1])
+    console.log("Anterior", diaAnterior, " Atual ", diaAtual)
 
     const obterDados = require('./obterDadosServico')
-    const transResp = await obterDados({ diaAnterior, diaAtual})
+    const transResp = await obterDados({ diaAnterior, diaAtual })
 
 
     let arrayChamado = []
@@ -531,7 +526,6 @@ async function atualizaServico() {
                     })
 
                     inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                    inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                     inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -598,7 +592,6 @@ async function atualizaServico() {
                     })
 
                     inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                    inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                     inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -666,7 +659,6 @@ async function atualizaServico() {
                     })
 
                     inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                    inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                     inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -734,7 +726,6 @@ async function atualizaServico() {
                     })
 
                     inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                    inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                     inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -797,7 +788,6 @@ async function atualizaServico() {
                     })
 
                     inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                    inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                     inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -858,7 +848,6 @@ async function atualizaServico() {
                     })
 
                     inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                    inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                     inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -919,7 +908,6 @@ async function atualizaServico() {
                     })
 
                     inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                    inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                     inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -977,7 +965,6 @@ async function atualizaServico() {
 
                     })
                     inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                    inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                     inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -1083,7 +1070,6 @@ async function atualizaServico() {
                         }
 
                         inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                        inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                         inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                         inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                         inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -1180,7 +1166,6 @@ async function atualizaServico() {
                         })
 
                         inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                        inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                         inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                         inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                         inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -1288,7 +1273,6 @@ async function atualizaServico() {
                             }
                         }
                         inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                        inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                         inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                         inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                         inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -1384,7 +1368,6 @@ async function atualizaServico() {
                         })
 
                         inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                        inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                         inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                         inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                         inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -1485,7 +1468,6 @@ async function atualizaServico() {
                         })
 
                         inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                        inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                         inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                         inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                         inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -1593,7 +1575,6 @@ async function atualizaServico() {
                         })
 
                         inserirAcaoDescricao.open('POST', url, true, "integracao", "G@Gebbgjtxtep5M");
-                        inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                         inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                         inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
                         inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Methods", "*")
@@ -1658,7 +1639,6 @@ async function atualizaServico() {
                                     })
 
                                     inserirAcaoDescricao.open('POST', URLServicos, true, "integracao", "G@Gebbgjtxtep5M");
-                                    inserirAcaoDescricao.setRequestHeader("Authorization", "Basic Y2VydmVsbG86Y2VydmVsbG8wMQ==");
                                     inserirAcaoDescricao.withCredentials = true;
                                     inserirAcaoDescricao.setRequestHeader("Content-Type", "application/json");
                                     inserirAcaoDescricao.setRequestHeader("Access-Control-Allow-Origin", "*")
@@ -1680,8 +1660,10 @@ atualizaServico()
 const services = () => {
     setInterval(() => {
         atualizaServico()
-        criaServico()
     }, 60000);
+    setInterval(() => {       
+        criaServico()
+    }, 180000);
 }
 
 app.listen(port, console.log(`Conectado, localhost:${port}`), services);
