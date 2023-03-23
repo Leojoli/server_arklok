@@ -389,7 +389,7 @@ async function atualizaServico() {
     let contentJSON = JSON.parse(resp)
     let array = [contentJSON][0]
 
-    let filtro = array.filter(array => array.analista == "AGENTE_ROTEIRIZADOR")
+    let filtro = array.filter(array => array.fila == "AGENTE_ROTEIRIZADOR")
 
     for (let i = 0; i < filtro.length; i++) {
         // Limpeza dos Arrays para construção do XML    
