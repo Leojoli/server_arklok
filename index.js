@@ -681,8 +681,8 @@ async function atualizaServico() {
                         }
                     }
 
-                } else if (ultimoStatusGoon.includes("AGEN") === true && estado.includes("AGUARDANDO ATENDIMENTO") === false) {
-                    console.log('AGUARDANDO ATENDIMENTO01');
+                } else if (ultimoStatusGoon.includes("AGEN") === true && estado.includes("AGUARDANDO APROVACAO") === false) {
+                    console.log('AGUARDANDO APROVACAO01');
 
                     let indiceNameGoon = resStatusArrayGoon.indexOf("AGEN")
                     let indeceNameGOONArray = resNameArrayGoon[indiceNameGoon]
