@@ -20,7 +20,7 @@ async function criaServico() {
     let diaSplit = data.toLocaleString().slice(0, 10).split("/")
     let diaAtual = diaSplit[2].replace(/,/, '') + "-" + (diaSplit[0] < 10 ? "0" + diaSplit[0] : diaSplit[0]) + "-" + (diaSplit[1] < 10 ? "0" + diaSplit[1] : diaSplit[1])
     console.log(diaAtual)
-    data.setDate(data.getDate() - 7);
+    data.setDate(data.getDate() - 3);
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
     console.log(diaAnteriorSplit)
     let diaAnterior = diaAnteriorSplit[2].replace(/,/, '') + "-" + (diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]) + "-" + (diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1])
@@ -85,7 +85,7 @@ async function criaServico() {
                         TipoAcao: "Atendimento",
                         LoginAnalistaDe: "FILA_ROTEIRIZACAO",
                         LoginAnalistaPara: "fila_n1",
-                        Estado: "Aguardando Atendimento",
+                        Estado: "AGUARDANDO APROVACAO",
                         CodigoChamado: numeroOS,
                         Descricao: `Não encontrado o endereço do cliente ${nomeDoFavorecido}, 
  por favor cadastrar o endereço e colocar na fila FILA_CHAMADOS ROTEIRIZADOS - ${data.toLocaleString().replace(/\//gi, "-")}`,
@@ -311,7 +311,7 @@ async function criaServico() {
                         "TipoAcao": "Atendimento",
                         "LoginAnalistaDe": "TECNICA_ROTEIRIZADA",
                         "LoginAnalistaPara": "FILA_ROTEIRIZACAO",
-                        "Estado": "Aguardando Atendimento",
+                        "Estado": "AGUARDANDO APROVACAO",
                         "CodigoChamado": numeroOS,
                         "Descricao": `Serviço criado no GOON \n <p hidden>GOON</p>`,
                         "FormaDeAtendimento": "Telefone",
@@ -365,7 +365,7 @@ async function atualizaServico() {
     let diaSplit = data.toLocaleString().slice(0, 10).split("/")
     let diaAtual = diaSplit[2].replace(/,/, '') + "-" + (diaSplit[0] < 10 ? "0" + diaSplit[0] : diaSplit[0]) + "-" + (diaSplit[1] < 10 ? "0" + diaSplit[1] : diaSplit[1])
     console.log(diaAtual)
-    data.setDate(data.getDate() - 7);
+    data.setDate(data.getDate() - 3);
     let diaAnteriorSplit = data.toLocaleString().slice(0, 10).split("/")
     console.log(diaAnteriorSplit)
     let diaAnterior = diaAnteriorSplit[2].replace(/,/, '') + "-" + (diaAnteriorSplit[0] < 10 ? "0" + diaAnteriorSplit[0] : diaAnteriorSplit[0]) + "-" + (diaAnteriorSplit[1] < 10 ? "0" + diaAnteriorSplit[1] : diaAnteriorSplit[1])
@@ -389,7 +389,9 @@ async function atualizaServico() {
     let contentJSON = JSON.parse(resp)
     let array = [contentJSON][0]
 
-    let filtro = array.filter(array => array.analista == "AGENTE_ROTEIRIZADOR")
+    //let filtro = array.filter(array => array.analista == "AGENTE_ROTEIRIZADOR")
+    let filtro = array.filter(array => array.estado !== "AGUARDANDO ATENDIMENTO" && array.estado !== "CONCLUIDO" && array.estado !== "PENDENTE RETORNO DE EQUIPAMENTO FECHADO" && array.estado !== "PENDENTE SOFTWARE" && array.estado !== "PENDENTE DE PECA" && array.estado !== "PENDENTE RETORNO DE EQUIPAMENTO" && array.estado !== "NÃO ATENDIDO" && array.estado !== "IMPRODUTIVO" && array.estado !== "CONLUÍDO – PAI" && array.estado !== "CANCELAR ATENDIMENTO")
+
 
     for (let i = 0; i < filtro.length; i++) {
         // Limpeza dos Arrays para construção do XML    
@@ -700,7 +702,7 @@ async function atualizaServico() {
                         "TipoAcao": "Atendimento",
                         "LoginAnalistaDe": "TECNICA_ROTEIRIZADA",
                         "LoginAnalistaPara": "FILA_ROTEIRIZACAO",
-                        "Estado": "AGUARDANDO ATENDIMENTO",
+                        "Estado": "AGUARDANDO APROVACAO",
                         "CodigoChamado": numero,
                         "Descricao": `AGUARDANDO ATENDIMENTO: ${dataStatusGOON} ${horaSatusGOON} - ${indeceNameGOONArray}
                                 \n<p style="color:white;">GOON</p>`,
